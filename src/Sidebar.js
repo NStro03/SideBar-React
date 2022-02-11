@@ -7,6 +7,7 @@ import { social, links } from './data'
 import { AppContext } from './context'
 
 const Sidebar = () => {
+  const { isSideBarOpen, closeSideBar } = useContext(AppContext);
   const sidebarLinks = links.map((link) => {
     return (
       <li key={link.id}>
@@ -15,7 +16,6 @@ const Sidebar = () => {
     )
   })
 
-  const { isSideBarOpen, closeSideBar } = useContext(AppContext);
   return (
     <aside className={isSideBarOpen ? 'sidebar show-sidebar' : 'sidebar'} >
       <div className='sidebar-header'>

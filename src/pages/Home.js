@@ -3,14 +3,14 @@ import { FaBars } from 'react-icons/fa'
 import { AppContext } from '../context';
 
 const Home = () => {
-  const appData = useContext(AppContext);
-  console.log(appData.isSideBarOpen);
+  const { openSideBar, openModal } = useContext(AppContext);
+
   return (
     <main>
-      <button onClick={() => appData.openSideBar()} className='sidebar-toggle'>
+      <button onClick={openSideBar} className='sidebar-toggle'>
         <FaBars />
       </button>
-      <button onClick={() => appData.openModal()} className='btn'>
+      <button onClick={openModal} className='btn'>
         Show Modal
       </button>
     </main>
