@@ -4,7 +4,7 @@ import { AppContext } from '../context';
 
 const Home = () => {
   const appData = useContext(AppContext);
-  console.log(appData.isSideBarOpen);
+
   return (
     <main>
       <button onClick={() => appData.openSideBar()} className='sidebar-toggle'>
