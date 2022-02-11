@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <main>
       <button onClick={() => appData.openSideBar()} className='sidebar-toggle'>
-        <FaBars /> Me
+        <FaBars />
       </button>
       <button onClick={() => appData.openModal()} className='btn'>
         Show Modal
