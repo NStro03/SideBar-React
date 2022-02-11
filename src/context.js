@@ -22,14 +22,17 @@ export default ({ children }) => {
     }
 
     const appValues = {
-        isSideBarOpen: isSideBarOpen,
-        isModalOpen: isModalOpen,
-        openSideBar: openSideBar,
-        closeSideBar: closeSideBar,
-        openModal: openModal,
-        closeModal: closeModal
-
+        isSideBarOpen,
+        isModalOpen,
+        openSideBar,
+        closeSideBar,
+        openModal,
+        closeModal
     }
 
     return <AppContext.Provider value={appValues}>{children}</AppContext.Provider>
 }
+// Can also wxport the below function to reduce the redundant code for accessing the useContext object.
+// export const useGlobalContext = () => {
+//     return useContext(AppContext);
+//   };

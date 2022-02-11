@@ -6,16 +6,22 @@ import {
 } from 'react-router-dom'
 import Modal from './Modal'
 import Sidebar from './Sidebar'
-import Home from './Home'
+import Home from './pages/Home'
+import Team from './pages/Team'
+import Error from './pages/Error'
+import Projects from './pages/Projects'
+
 function App() {
   return (
     <Router>
-      <Sidebar />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        {/* <Route path="/about" element={<About />} />
-        <Route path="*" element={<Error />} /> */}
+        <Route path="/team" element={<Team />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="*" element={<Error />} />
       </Routes>
+      <Modal />
+      <Sidebar />
     </Router>
   )
 }

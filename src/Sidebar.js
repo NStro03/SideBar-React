@@ -8,18 +8,19 @@ import { AppContext } from './context'
 
 const Sidebar = () => {
   const sidebarLinks = links.map((link) => {
-    return (<li>
-      <Link key={link.id} to={link.url}>{(link.text !== 'Random') ? link.text : "Home"}</Link>
-    </li>
+    return (
+      <li key={link.id}>
+        <Link to={link.url}>{link.text}</Link>
+      </li>
     )
   })
 
-  const appData = useContext(AppContext);
+  const { isSideBarOpen, closeSideBar } = useContext(AppContext);
   return (
-    <nav className={appData.isSideBarOpen ? 'sidebar show-sidebar' : 'sidebar'} >
-      <div className='nav-header'>
+    <aside className={isSideBarOpen ? 'sidebar show-sidebar' : 'sidebar'} >
+      <div className='sidebar-header'>
         <img src={logo} className='logo' alt='logo' />
-        <button onClick={() => appData.closeSideBar()}>
+        <button className='close-btn' onClick={closeSideBar}>
           <FaTimes />
         </button>
       </div>
@@ -39,7 +40,7 @@ const Sidebar = () => {
           )
         })}
       </ul>
-    </nav>
+    </aside>
   )
 }
 
